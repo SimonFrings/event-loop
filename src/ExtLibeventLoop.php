@@ -10,6 +10,8 @@ use React\EventLoop\Timer\Timer;
 use SplObjectStorage;
 
 /**
+ * Deprecated since v1.2.0
+ *
  * An `ext-libevent` based event loop.
  *
  * This uses the [`libevent` PECL extension](https://pecl.php.net/package/libevent).

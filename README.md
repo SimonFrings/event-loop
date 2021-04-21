@@ -219,7 +219,8 @@ provides an interface to `libuv` library.
 
 This loop is known to work with PHP 7+.
 
-#### ExtLibeventLoop
+#### ~~ExtLibeventLoop~
+> Deprecated since v1.2.0
 
 An `ext-libevent` based event loop.
 
@@ -242,7 +243,8 @@ As such, it's recommended to use `stream_set_read_buffer($stream, 0);`
 to disable PHP's internal read buffer in this case.
 See also [`addReadStream()`](#addreadstream) for more details.
 
-#### ExtLibevLoop
+#### ~~ExtLibevLoop~~
+> Deprecated since v1.2.0
 
 An `ext-libev` based event loop.
 
