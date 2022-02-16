@@ -86,6 +86,23 @@ abstract class AbstractTimerTest extends TestCase
         $this->assertGreaterThanOrEqual(4, $i);
     }
 
+    public function testAddPeriodicTimerWillBeInvokedWithMaximumAccuracyUntilItIsCancelledTEST()
+    {
+        $loop = $this->createLoop();
+
+        $i = 0;
+        $periodic = $loop->addPeriodicTimer(0, function ($periodic) use (&$i, $loop) {
+            ++$i;
+            if ($i === 2) {
+                $loop->cancelTimer($periodic);
+            }
+        });
+
+        $loop->run();
+
+        $this->assertEquals(2, $i);
+    }
+
     public function testAddPeriodicTimerCancelsItself()
     {
         $loop = $this->createLoop();
